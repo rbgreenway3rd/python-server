@@ -146,7 +146,6 @@ class HandleRequests(BaseHTTPRequestHandler):
         # Parse the URL
         (resource, id) = self.parse_url(self.path)
 
-        # Delete a single animal from the list
         if resource == "animals":
             update_animal(id, post_body)
 
@@ -159,7 +158,7 @@ class HandleRequests(BaseHTTPRequestHandler):
         if resource == "locations":
             update_location(id, post_body)
 
-        # Encode the new animal and send in response
+        # Encode the new object and send in response
         self.wfile.write("".encode())
 
     def do_DELETE(self):
@@ -182,7 +181,6 @@ class HandleRequests(BaseHTTPRequestHandler):
         if resource == "locations":
             delete_location(id)
 
-        # Encode the new animal and send in response
         self.wfile.write("".encode())
 
 

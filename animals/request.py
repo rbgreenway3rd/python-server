@@ -4,21 +4,24 @@ ANIMALS = [
         "name": "Winnie",
         "species": "Dog",
         "locationId": 1,
-        "customerId": 4
+        "customerId": 4,
+        "status": "Admitted"
     },
     {
         "id": 2,
         "name": "Penny",
         "species": "Dog",
         "locationId": 1,
-        "customerId": 2
+        "customerId": 2,
+        "status": "Admitted"
     },
     {
         "id": 3,
         "name": "Dinky",
         "species": "Cat",
         "locationId": 2,
-        "customerId": 1
+        "customerId": 1,
+        "status": "Admitted"
     }
 ]
 
@@ -59,6 +62,16 @@ def create_animal(animal):
 
     # Return the dictionary with `id` property added
     return animal
+
+
+def update_animal(id, new_animal):
+    # Iterate the ANIMALS list, but use enumerate() so that
+    # you can access the index value of each item.
+    for index, animal in enumerate(ANIMALS):
+        if animal["id"] == id:
+            # Found the animal. Update the value.
+            ANIMALS[index] = new_animal
+            break
 
 
 def delete_animal(id):

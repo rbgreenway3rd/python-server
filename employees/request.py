@@ -60,6 +60,13 @@ def create_employee(employee):
     return employee
 
 
+def update_employee(id, new_employee):
+    for index, employee in enumerate(EMPLOYEES):
+        if employee["id"] == id:
+            EMPLOYEES[index] = new_employee
+            break
+
+
 def delete_employee(id):
     # Initial -1 value for animal index, in case one isn't found
     employee_index = -1
